@@ -5,7 +5,6 @@
 	};
 	objectVersion = 46;
 	objects = {
-
 /* Begin PBXBuildFile section */
 		00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302AC1ABCB8CE00DB3ED1 /* libRCTActionSheet.a */; };
 		00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302BA1ABCB90400DB3ED1 /* libRCTGeolocation.a */; };
@@ -43,6 +42,7 @@
 		C76DE1702010CD5100AE1A99 /* ApplozicChat.m in Sources */ = {isa = PBXBuildFile; fileRef = C76DE16F2010CD5100AE1A99 /* ApplozicChat.m */; };
 		DB0443342DBCB937719FC774 /* Pods_ApplozicSampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E09BECAD1B762BCF3725A5E /* Pods_ApplozicSampleTests.framework */; };
 		E327AC4809F475D0E79D504E /* libPods-ApplozicSample-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 71F42BBC5CD1D89EFF35CCF5 /* libPods-ApplozicSample-tvOS.a */; };
+		DE75680879D24BD9BF0D85B5 /* libRNApplozicChat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E3321086383841C2A355913E /* libRNApplozicChat.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -364,6 +364,8 @@
 		C76DE16F2010CD5100AE1A99 /* ApplozicChat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplozicChat.m; sourceTree = "<group>"; };
 		E548CC38D6A4EA08E8E5862B /* Pods-ApplozicSampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApplozicSampleTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ApplozicSampleTests/Pods-ApplozicSampleTests.release.xcconfig"; sourceTree = "<group>"; };
 		F6C16C0194C2111F9BE786DC /* Pods-ApplozicSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApplozicSample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ApplozicSample/Pods-ApplozicSample.debug.xcconfig"; sourceTree = "<group>"; };
+		0F0D2C4B267C4F21B5020687 /* RNApplozicChat.xcodeproj */ = {isa = PBXFileReference; name = "RNApplozicChat.xcodeproj"; path = "../node_modules/react-native-applozic-chat/ios/RNApplozicChat.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		E3321086383841C2A355913E /* libRNApplozicChat.a */ = {isa = PBXFileReference; name = "libRNApplozicChat.a"; path = "libRNApplozicChat.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -394,6 +396,7 @@
 				00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */,
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
 				7B2FC838A7C740D9CDA5966B /* Pods_ApplozicSample.framework in Frameworks */,
+				DE75680879D24BD9BF0D85B5 /* libRNApplozicChat.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -585,6 +588,7 @@
 				832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */,
 				00C302DF1ABCB9EE00DB3ED1 /* RCTVibration.xcodeproj */,
 				139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */,
+				0F0D2C4B267C4F21B5020687 /* RNApplozicChat.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -753,7 +757,7 @@
 		83CBB9F71A601CBA00E9B192 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0610;
+				LastUpgradeCheck = 610;
 				ORGANIZATIONNAME = Facebook;
 				TargetAttributes = {
 					00E356ED1AD99517003FC87E = {
@@ -1436,6 +1440,14 @@
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ApplozicSample.app/ApplozicSample";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/../node_modules/react-native-applozic-chat/ios/**",
+				);
 			};
 			name = Debug;
 		};
@@ -1454,6 +1466,14 @@
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ApplozicSample.app/ApplozicSample";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/../node_modules/react-native-applozic-chat/ios/**",
+				);
 			};
 			name = Release;
 		};
@@ -1478,6 +1498,10 @@
 				PROVISIONING_PROFILE = "9452823f-8e04-4d5b-b3b8-af6ae89dc20a";
 				PROVISIONING_PROFILE_SPECIFIER = "global Customer Demo";
 				VERSIONING_SYSTEM = "apple-generic";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/../node_modules/react-native-applozic-chat/ios/**",
+				);
 			};
 			name = Debug;
 		};
@@ -1501,6 +1525,10 @@
 				PROVISIONING_PROFILE = "9452823f-8e04-4d5b-b3b8-af6ae89dc20a";
 				PROVISIONING_PROFILE_SPECIFIER = "global Customer Demo";
 				VERSIONING_SYSTEM = "apple-generic";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/../node_modules/react-native-applozic-chat/ios/**",
+				);
 			};
 			name = Release;
 		};
@@ -1528,6 +1556,14 @@
 				SDKROOT = appletvos;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 9.2;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/../node_modules/react-native-applozic-chat/ios/**",
+				);
 			};
 			name = Debug;
 		};
@@ -1555,6 +1591,14 @@
 				SDKROOT = appletvos;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 9.2;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/../node_modules/react-native-applozic-chat/ios/**",
+				);
 			};
 			name = Release;
 		};
@@ -1577,6 +1621,10 @@
 				SDKROOT = appletvos;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ApplozicSample-tvOS.app/ApplozicSample-tvOS";
 				TVOS_DEPLOYMENT_TARGET = 10.1;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+				);
 			};
 			name = Debug;
 		};
@@ -1599,6 +1647,10 @@
 				SDKROOT = appletvos;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ApplozicSample-tvOS.app/ApplozicSample-tvOS";
 				TVOS_DEPLOYMENT_TARGET = 10.1;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+				);
 			};
 			name = Release;
 		};

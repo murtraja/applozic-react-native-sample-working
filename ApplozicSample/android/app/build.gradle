@@ -98,7 +98,7 @@ android {
     buildToolsVersion "27.0.3"
 
     defaultConfig {
-        applicationId "com.mobicomkit.sample"
+        applicationId "com.applozicsample"
         minSdkVersion 16
         targetSdkVersion 27
         versionCode 1
@@ -138,6 +138,7 @@ android {
 }
 
 dependencies {
+    compile project(':react-native-applozic-chat')
     compile fileTree(dir: "libs", include: ["*.jar"])
     compile "com.android.support:appcompat-v7:27.1.1"
     compile 'com.applozic.communication.uiwidget:mobicomkitui:5.9.4'

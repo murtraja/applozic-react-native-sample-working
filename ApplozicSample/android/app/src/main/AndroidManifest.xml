@@ -24,13 +24,13 @@
         android:targetSdkVersion="22" />
 
     <application
-      android:name=".MainApplication"
+      android:name="com.applozicsample.MainApplication"
       android:allowBackup="true"
       android:label="@string/app_name"
       android:icon="@mipmap/ic_launcher"
       android:theme="@style/AppTheme">
       <activity
-        android:name=".MainActivity"
+        android:name="com.applozicsample.MainActivity"
         android:label="@string/app_name"
         android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
         android:windowSoftInputMode="adjustResize">
@@ -44,13 +44,13 @@
         <activity android:name="com.applozic.mobicomkit.uiwidgets.conversation.activity.ConversationActivity"
             android:configChanges="keyboardHidden|screenSize|smallestScreenSize|screenLayout|orientation"
             android:label="@string/app_name"
-            android:parentActivityName=".MainActivity"
+            android:parentActivityName="com.applozicsample.MainActivity"
             android:theme="@style/ApplozicTheme"
             android:launchMode="singleTask" >
             <!-- Parent activity meta-data to support API level 7+ -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+                android:value="com.applozicsample.MainActivity" />
         </activity>
 
         <activity android:name="com.applozic.mobicomkit.uiwidgets.people.activity.MobiComKitPeopleActivity"
